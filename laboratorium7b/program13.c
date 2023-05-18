@@ -19,12 +19,8 @@ void obsluga_sig_int(int sig) {
 
 
 
-void dawne(int sig){
-	exit(0);
-}
-
 void obsluga_sig_alarm(int sig){
-	signal(SIGINT, dawne);
+	signal(SIGINT, SIG_DFL);
 	printf("Ding! Ding! Ding! - Przywracam domyślną obsługę");
 }
 
