@@ -17,12 +17,9 @@ void obsluga_sig_int(int sig) {
 	nr_napisu=((nr_napisu + 1) % 3);
 }
 
-void dawne(int sig){
-	exit(0);
-}
 
 void obsluga_sig_quit(int sig){
-	signal(SIGINT, dawne);
+	signal(SIGINT, SIG_DFL);
 	printf("Przywrócono normalne działanie");
 }
 
